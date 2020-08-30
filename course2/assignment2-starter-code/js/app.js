@@ -15,6 +15,8 @@ function NewItemsToList(ShoppingListCheckOffService){
 
   Item.addItemToBuyList=function(){
     ShoppingListCheckOffService.addToBuyItem(Item.newItemName,Item.newItemQuantity);
+    Item.newItemName="";
+    Item.newItemQuantity="";
   }
 }
 
@@ -38,7 +40,28 @@ function AlreadyBoughtController(ShoppingListCheckOffService){
 
 function ShoppingListCheckOffService(){
   var service=this;
-  var toBuyItems=[];
+  var toBuyItems=[
+    {
+      name:"soft-drinks",
+      quantity:"3 bottles of"
+    },
+    {
+      name:"Cookies",
+      quantity:"4 packets of"
+    },
+    {
+      name:"Chocolates",
+      quantity:"3 dairy-milk"
+    },
+    {
+      name:"Chips",
+      quantity:"3 packets of"
+    },
+    {
+      name:"Milk",
+      quantity:"2 boottles of"
+    }
+  ];
 
   var toBoughtItems=[];
 
