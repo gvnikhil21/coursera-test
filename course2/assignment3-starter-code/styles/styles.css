@@ -24,4 +24,7 @@ input[type="text"] {
 .loader li{
   margin-bottom: 10px;
 }
-.loader button{}
+.loader .msg{
+  background-color: darkred;
+  color:lightgreen;
+}

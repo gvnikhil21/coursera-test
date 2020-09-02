@@ -17,7 +17,15 @@ ctrl.show=function (){
   var promise=MenuSearchService.getMatchedMenuItems(ctrl.toSearchItem);
 
   promise.then(function(response){
-    ctrl.found=response;
+    if(response.length>0){
+      ctrl.message='';
+      ctrl.found=response;
+    }
+    else{
+      ctrl.message='Nothing Found!'
+      ctrl.found=[];
+    }
+
   })
   .catch(function (error){
     console.log("Something's is wrong!");
@@ -44,7 +52,7 @@ function MenuSearchService($http){
       var foundItems=[];
       var items=result.data.menu_items;
       for(var i=0;i<items.length;i++){
-        if(items[i].description.match(toSearchItem)){
+        if(toSearchItem.length>0 && items[i].description.match(toSearchItem)){
           foundItems.push(items[i]);
         }
       }
@@ -59,6 +67,7 @@ function FoundItems(){
     templateUrl:'loader\\itemsloaderindicator.template.html',
     scope: {
       foundItem:'<',
+      onEmpty:'<',
       onRemove:'&'
     }
   };
