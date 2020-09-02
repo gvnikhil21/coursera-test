@@ -17,7 +17,7 @@ ctrl.show=function (){
   var promise=MenuSearchService.getMatchedMenuItems(ctrl.toSearchItem);
 
   promise.then(function(response){
-    if(response.length>0){
+    if(response && response.length>0){
       ctrl.message='';
       ctrl.found=response;
     }
