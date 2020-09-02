@@ -1,0 +1,26 @@
+body{
+  background-color: lightgrey;
+}
+h1 {
+  margin-bottom: 30px;
+  color: maroon;
+}
+input[type="text"] {
+  width: 200px;
+  float: left;
+}
+
+.narrow-button {
+  float: left;
+  margin-left: 10px;
+}
+.loader{
+  float: left;
+  clear:left;
+}
+.loader .item_name{
+  font-weight: bold;
+}
+.loader li{
+  margin-bottom: 10px;
+}
