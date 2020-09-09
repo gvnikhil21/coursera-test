@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row" ng-controller="InfoController as info">
+    <div ng-if="!info.user" class="userInfoDisplay">
+      <p>Not signed up yet!</p>
+      <button class="btn btn-default" ui-sref="public.signup">Sign Up Now!</button>
+  </div>
+  <div ng-if="info.user.favMenu" class="userInfoDisplay">
+    <p class="col-sm-2 labelName">Name:</p>
+    <p>{{info.user.firstName+" "+info.user.lastName}}</p>
+    <p class="col-sm-2 labelName">Email:</p>
+    <p >{{info.user.email}}</p>
+    <p class="col-sm-2 labelName">Phone:</p>
+    <p>{{info.user.phone}}</p>
+    <p class="col-sm-2 labelName">Favorite Menu:</p>
+    <div class="col-md-6">
+      <div class="col-sm-5">
+        <div class="menu-item-photo-info">
+          <div>{{info.user.menuData.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.user.menuData.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+        </div>
+      </div>
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{info.user.menuData.name}}</h3>
+          <p class="menu-item-details">{{info.user.menuData.description}}</p>
+        </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
